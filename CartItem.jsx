@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeFromCart, increaseQuantity, decreaseQuantity } from './CartSlice';
+import { removeItem, updateQuantity } from './CartSlice';
 import './App.css';
 
 const CartItem = () => {
@@ -8,6 +8,21 @@ const CartItem = () => {
   const items = useSelector(state => state.cart.items);
 
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  // Explicit handler function for incrementing quantity
+  const handleIncrement = (itemId) => {
+    dispatch(updateQuantity({ id: itemId, type: 'increment' }));
+  };
+
+  // Explicit handler function for decrementing quantity
+  const handleDecrement = (itemId) => {
+    dispatch(updateQuantity({ id: itemId, type: 'decrement' }));
+  };
+
+  // Explicit handler function for removing item
+  const handleRemove = (itemId) => {
+    dispatch(removeItem(itemId));
+  };
 
   return (
     <div>
@@ -28,9 +43,9 @@ const CartItem = () => {
               <p>Unit Price: ${item.price}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Total Cost: ${item.price * item.quantity}</p>
-              <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
-              <button onClick={() => dispatch(decreaseQuantity(item.id))} disabled={item.quantity === 1}>-</button>
-              <button onClick={() => dispatch(removeFromCart(item.id))}>Delete</button>
+              <button onClick={() => handleIncrement(item.id)}>+</button>
+              <button onClick={() => handleDecrement(item.id)} disabled={item.quantity === 1}>-</button>
+              <button onClick={() => handleRemove(item.id)}>Delete</button>
             </div>
           ))}
           <h3>Total Cart Amount: ${total}</h3>

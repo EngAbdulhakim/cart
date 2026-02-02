@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AboutUs = () => (
-  <div className="about-us">
+  <div className="about-us-container">
     <h2>About Paradise Nursery</h2>
     <p>
       Paradise Nursery is an online store specializing in high-quality houseplants. We believe that plants add a touch of beauty and life to any space, and we strive to provide the best varieties to our customers with exceptional customer service.

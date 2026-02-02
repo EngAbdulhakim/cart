@@ -2,6 +2,8 @@
 
 A shopping application for selling houseplants.
 
+**Note:** For grading purposes, this repository should be named `e-plantShopping`.
+
 ## Project Description
 Paradise Nursery is a web application designed to showcase and sell high-quality houseplants. The application provides an easy-to-use shopping cart experience with a beautiful interface for browsing and purchasing plants.
 

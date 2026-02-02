@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from './CartSlice';
+import { addItem } from './CartSlice';
 import './App.css';
 
 const products = [
@@ -35,7 +35,7 @@ const ProductList = () => {
   const [added, setAdded] = useState([]);
 
   const handleAdd = (product) => {
-    dispatch(addToCart(product));
+    dispatch(addItem(product));
     setAdded([...added, product.id]);
   };
 
