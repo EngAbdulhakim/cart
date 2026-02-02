@@ -2,12 +2,12 @@ import React from 'react';
 
 const AboutUs = () => (
   <div className="about-us">
-    <h2>عن جنة الحضانة</h2>
+    <h2>About Paradise Nursery</h2>
     <p>
-      جنة الحضانة هو متجر إلكتروني متخصص في بيع النباتات المنزلية عالية الجودة. نؤمن بأن النباتات تضيف لمسة من الجمال والحياة لأي مكان، ونسعى لتوفير أفضل الأنواع لعملائنا مع خدمة عملاء مميزة.
+      Paradise Nursery is an online store specializing in high-quality houseplants. We believe that plants add a touch of beauty and life to any space, and we strive to provide the best varieties to our customers with exceptional customer service.
     </p>
     <p>
-      رؤيتنا هي نشر ثقافة الزراعة المنزلية وتسهيل اقتناء النباتات للجميع.
+      Our vision is to spread the culture of home gardening and make plant ownership accessible to everyone.
     </p>
   </div>
 );

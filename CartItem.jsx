@@ -12,31 +12,31 @@ const CartItem = () => {
   return (
     <div>
       <nav className="navbar">
-        <a href="/">الرئيسية</a>
-        <a href="/products">النباتات</a>
-        <a href="/cart">العربة <span className="cart-count">{items.reduce((sum, item) => sum + item.quantity, 0)}</span></a>
+        <a href="/">Home</a>
+        <a href="/products">Plants</a>
+        <a href="/cart">Cart <span className="cart-count">{items.reduce((sum, item) => sum + item.quantity, 0)}</span></a>
       </nav>
-      <h2>عربة التسوق</h2>
+      <h2>Shopping Cart</h2>
       {items.length === 0 ? (
-        <p>العربة فارغة</p>
+        <p>Your cart is empty</p>
       ) : (
         <div>
           {items.map(item => (
             <div className="cart-item" key={item.id}>
               <img src={item.img} alt={item.name} className="product-img" />
               <h4>{item.name}</h4>
-              <p>سعر الوحدة: {item.price} ريال</p>
-              <p>الكمية: {item.quantity}</p>
-              <p>الإجمالي: {item.price * item.quantity} ريال</p>
+              <p>Unit Price: ${item.price}</p>
+              <p>Quantity: {item.quantity}</p>
+              <p>Total Cost: ${item.price * item.quantity}</p>
               <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
               <button onClick={() => dispatch(decreaseQuantity(item.id))} disabled={item.quantity === 1}>-</button>
-              <button onClick={() => dispatch(removeFromCart(item.id))}>حذف</button>
+              <button onClick={() => dispatch(removeFromCart(item.id))}>Delete</button>
             </div>
           ))}
-          <h3>المجموع الكلي: {total} ريال</h3>
-          <button disabled>إنهاء الشراء (قريباً)</button>
+          <h3>Total Cart Amount: ${total}</h3>
+          <button disabled>Checkout (Coming Soon)</button>
           <a href="/products">
-            <button>استمر في التسوق</button>
+            <button>Continue Shopping</button>
           </a>
         </div>
       )}

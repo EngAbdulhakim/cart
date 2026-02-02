@@ -1,31 +1,343 @@
+/* Global Styles */
 body {
   margin: 0;
-  font-family: 'Tajawal', Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background: url('./images/garden-bg.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: #333;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* Landing Page */
 .landing {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 20px;
+}
+
+.landing h1 {
+  font-size: 3.5rem;
+  color: #2d5016;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.landing p {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 30px;
 }
 
 .button-start {
   background-color: #4CAF50;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 40px;
   font-size: 1.2rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button-start:hover {
   background-color: #388e3c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #2d5016;
+  padding: 15px 30px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navbar a:hover {
+  color: #a5d6a7;
+}
+
+.cart-count {
+  background-color: #ff5722;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.9rem;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* Product Listing */
+h2 {
+  text-align: center;
+  color: #2d5016;
+  font-size: 2.5rem;
+  margin: 30px 0;
+}
+
+h3 {
+  color: #4CAF50;
+  font-size: 1.8rem;
+  margin: 25px 20px 15px;
+  padding-left: 20px;
+  border-left: 4px solid #4CAF50;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-card h4 {
+  color: #2d5016;
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+.product-card p {
+  color: #4CAF50;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.product-card button:hover:not(:disabled) {
+  background-color: #388e3c;
+  transform: scale(1.02);
+}
+
+.product-card button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Shopping Cart */
+.cart-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item h4 {
+  color: #2d5016;
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+}
+
+.cart-item p {
+  color: #555;
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.cart-item button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.cart-item button:hover:not(:disabled) {
+  background-color: #388e3c;
+}
+
+.cart-item button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.cart-item button:last-child {
+  background-color: #f44336;
+}
+
+.cart-item button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+/* Cart Summary */
+h3 {
+  text-align: center;
+  color: #2d5016;
+  font-size: 2rem;
+  margin: 30px 0;
+}
+
+/* Checkout Buttons */
+div > button {
+  display: block;
+  margin: 15px auto;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #4CAF50;
+  color: white;
+}
+
+div > button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+div > button:hover:not(:disabled) {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+div > a > button {
+  background-color: #2196F3;
+}
+
+div > a > button:hover {
+  background-color: #1976D2;
+}
+
+/* About Us Page */
+.about-us {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+  color: #2d5016;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-us p {
+  color: #555;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landing h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing p {
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cart-item img {
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }

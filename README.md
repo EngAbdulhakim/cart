@@ -1,17 +1,25 @@
-# جنة الحضانة
+# Paradise Nursery Shopping Application
 
-تطبيق تسوق لبيع النباتات المنزلية.
+A shopping application for selling houseplants.
 
-## وصف المشروع
-تطبيق ويب لعرض وبيع النباتات المنزلية مع عربة تسوق وتجربة مستخدم سهلة.
+## Project Description
+Paradise Nursery is a web application designed to showcase and sell high-quality houseplants. The application provides an easy-to-use shopping cart experience with a beautiful interface for browsing and purchasing plants.
 
-## الملفات المطلوبة
-- AboutUs.jsx
-- App.css
-- App.jsx
-- CartSlice.jsx
-- ProductList.jsx
-- CartItem.jsx
+## Features
+- Browse plants organized by categories
+- Add plants to shopping cart
+- Manage cart items (increase/decrease quantity, remove items)
+- View total cart amount
+- Responsive navigation bar
+- Beautiful landing page with background image
 
-## تنفيذ المهام
-تم تنفيذ جميع المهام المطلوبة في هذا المستودع.
+## Required Files
+- AboutUs.jsx - Company information page
+- App.css - Styling with background image for landing page
+- App.jsx - Landing page with company name and "Get Started" button
+- CartSlice.jsx - Redux slice for shopping cart management
+- ProductList.jsx - Product listing page with categories
+- CartItem.jsx - Shopping cart page
+
+## Implementation Status
+All required tasks have been successfully implemented in this repository.
